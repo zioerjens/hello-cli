@@ -1,0 +1,15 @@
+@import "../constants";
+
+.head-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $decent-color;
+    height: auto;
+    height: 5.5vh;
+}
+
+h1 {
+    color: $secondary-color;
+    margin: 0;
+}
