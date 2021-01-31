@@ -1,15 +1,15 @@
-@import "../constants";
+@import "src/app/constants";
 
 .head-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: $decent-color;
-    height: auto;
-    height: 5.5vh;
+    padding-top: 2vh;
+    height: 7vh;
 }
 
 h1 {
-    color: $secondary-color;
+    color: $color2;
     margin: 0;
+    font-weight: bolder;
 }

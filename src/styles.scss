@@ -38,3 +38,19 @@ $hello-cli-theme: mat-light-theme((
 html, body { height: 100%; }
 body { margin: 0; }
 * { font-family: Quicksand, "Helvetica Neue", sans-serif !important; }
+
+// Include new fonts
+@font-face {
+  font-family: "Quicksand";
+  src: local("Quicksand"), url(./assets/fonts/Quicksand.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "DancingScript";
+  src: local("DancingScript"), url(./assets/fonts/DancingScript.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "KunstlerScript";
+  src: local("KunstlerScript"), url(./assets/fonts/KunstlerScript.ttf) format("truetype");
+}

@@ -1,14 +1,25 @@
-<div class="navigation-container mat-app-background">
-    <a class="navigation-item" routerLink="/home" routerLinkActive="active">Vorstellung</a>
-    <a class="navigation-item" routerLink="/home" routerLinkActive="active">Schwangerschaftskontrollen</a>
-    <a class="navigation-item" routerLink="/home" routerLinkActive="active">Wochenbettbetreuung</a>
-    <a class="navigation-item" routerLink="/home" routerLinkActive="active">Spezielle Angebote</a>
+<!-- burger icon background -->
+<div id="burger-icon-background" routerLink="/home" routerLinkActive="hidden">
+    <img src="assets/img/logo-black.png" id="logo"/>
 </div>
 
-<a href="localhost:4200" class="burger">
-    <svg viewBox="0 0 100 100" width="5vh" height="5.5vh">
+<!-- Navigation -->
+<div [@openClose]="{value: this.getAnimationStatus(), params: {max_height: maxHeight}}" id="outer-navigation-container">
+    <div id="navigation-container" class="mat-app-background">
+        <div [ngClass]="applicationStateService.getIsMobileResolution()?'nav-mobile':'nav-desktop'" id="navigation-item-holder">
+            <a class="navigation-item" routerLink="/home" routerLinkActive="active">Vorstellung</a>
+            <a class="navigation-item" routerLink="/home" routerLinkActive="active">Schwangerschaftskontrollen</a>
+            <a class="navigation-item" routerLink="/home" routerLinkActive="active">Wochenbettbetreuung</a>
+            <a class="navigation-item" routerLink="/home" routerLinkActive="active">Spezielle Angebote</a>
+        </div>
+    </div>
+</div>
+
+<!-- burger icon -->
+<div *ngIf="applicationStateService.getIsMobileResolution()" id="burger" (click)="this.toggleNavigation()">
+    <svg viewBox="0 0 100 100" width="10vw" height="11vw">
         <rect x="10" y="17.5" width="80" height="5"></rect>
         <rect x="10" y="47.5" width="80" height="5"></rect>
         <rect x="10" y="77.5" width="80" height="5"></rect>
     </svg>
-</a>
+</div>

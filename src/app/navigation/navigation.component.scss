@@ -1,30 +1,80 @@
-@import "../constants";
+@import "src/app/constants";
 
-.navigation-item {
-    padding: 0.5%;
-    color: $secondary-color;
+.navigation-item {    
+    color: $color2;
     text-decoration: none;
     transition: 0.3s;
+    padding: 10px;
 }
 
 .navigation-item:hover {
-    background-color: $decent-color;
-  }
+    background-color: $color4;
+}
 
-.navigation-container {
+#burger {
+    position: absolute;
+    top: 20px;
+    height: 5.5vh;
+    right: 25px;
+}
+
+#burger svg {
+    fill: $color2;
+}
+
+.nav-desktop {
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
-    background-color: $primary-color;
 }
 
-.burger {
-    position: absolute;
-    top: 0;
-    height: 5.5vh;
-    right: 10px;
+.nav-mobile {
+    display: flex;
+    flex-flow: column wrap;
+    padding: 5px 0 5px 0;
 }
 
-.burger svg {
-    fill: $secondary-color;
+.nav-mobile a {
+    text-align: center;
+    margin: 5px;
+}
+
+.hidden {
+    display: none;
+}
+
+#burger-icon-background {
+    height: 13.2vh;
+    background-color: $home-accent;
+}
+
+#logo {
+    height: calc(13.2vw - 10px);
+    margin: 5px;
+}
+
+#navigation-item-holder {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    justify-content: center;
+}
+
+#navigation-container {    
+    background-color: $home-accent;
+    min-height: 30px;
+}
+
+#outer-navigation-container {
+    overflow: hidden;
+}
+
+@media only screen and (max-width: $mobileResolution) {
+    #outer-navigation-container {
+        max-height: 0;
+    }
+
+    #burger-icon-background {
+        height:13.2vw;
+    }
 }

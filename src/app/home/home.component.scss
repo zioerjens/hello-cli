@@ -1,0 +1,44 @@
+@import "src/app/constants";
+
+#home-container {
+    background-color: $home-accent;
+    width: 100%;
+    // height: 48.4%; /*(img-height / img-width * container-width) -> 930 / 1920 * 100% = */
+    height: 300px;
+}
+
+#welcome-holder {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    width: 100%;
+}
+
+#title-subtext {
+    text-align: center;
+    font-size: 1.3em;
+    width: 80%;
+    max-width: 850px;
+    margin-top: 10vh;
+}
+
+#title-img {
+    width: 70%;
+    max-width: 850px;
+    margin-top: 15vh;
+}
+
+// #title {
+//     margin-top: 15vh;
+//     font-family: KunstlerScript, Arial, Helvetica, sans-serif !important;
+//     font-size: 6em;
+//     font-weight: 500;
+// }
+
+@media only screen and (max-width: $mobileResolution) {
+    // TODO
+}
+
+@media only screen and (min-width: $desktopResolution) {
+    // TODO
+}
