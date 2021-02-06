@@ -17,13 +17,25 @@ import { MatListModule } from '@angular/material/list';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MatCardModule } from '@angular/material/card';
 import { HeadComponent } from './head/head.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { PregnancyChecksComponent } from './pregnancy-checks/pregnancy-checks.component';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { LanguageSelectorComponent } from './language-selector/language-selector.component';
+
+// AoT requires an exported function for factories
+export function HttpLoaderFactory(httpClient: HttpClient) {
+  return new TranslateHttpLoader(httpClient);
+}
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     NavigationComponent,
-    HeadComponent
+    HeadComponent,
+    PregnancyChecksComponent,
+    LanguageSelectorComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +49,15 @@ import { HeadComponent } from './head/head.component';
     MatIconModule,
     MatListModule,
     MatCardModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

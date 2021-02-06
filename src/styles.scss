@@ -1,3 +1,4 @@
+@import "src/app/constants";
 
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
@@ -53,4 +54,25 @@ body { margin: 0; }
 @font-face {
   font-family: "KunstlerScript";
   src: local("KunstlerScript"), url(./assets/fonts/KunstlerScript.ttf) format("truetype");
+}
+
+// Custom Scrollbar
+/* scrollbar width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* scrollbar track */
+::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+/* scrollbar handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(160, 160, 160);
+}
+
+/* scrollbar handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(114, 114, 114);
 }

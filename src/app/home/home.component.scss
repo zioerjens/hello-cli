@@ -1,10 +1,33 @@
 @import "src/app/constants";
 
+.offer-item {
+    width: 20em;
+    margin: 7vh 15px 15px 15px;
+    height: 25em;
+    border: solid white 5px;
+    background-color: transparent;
+    transition: 0.5s;
+    text-align: center;
+    cursor: pointer;
+}
+
+.offer-item:hover {
+    margin-top: calc(7vh - 20px);
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 25px;
+    width: calc(20em + 10px);
+    height: calc(25em + 10px);
+}
+
+.offer-title {
+    font-size: 1.2em;
+    margin: 15px 0;
+}
+
 #home-container {
     background-color: $home-accent;
     width: 100%;
-    // height: 48.4%; /*(img-height / img-width * container-width) -> 930 / 1920 * 100% = */
-    height: 300px;
 }
 
 #welcome-holder {
@@ -28,6 +51,22 @@
     margin-top: 15vh;
 }
 
+#tatiana-img {
+    width: 35vw;
+    max-width: 300px;
+    margin-top: 10vh;
+}
+
+#offers-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+#ultrasound {
+    width: 70%;
+}
+
 // #title {
 //     margin-top: 15vh;
 //     font-family: KunstlerScript, Arial, Helvetica, sans-serif !important;
@@ -36,9 +75,11 @@
 // }
 
 @media only screen and (max-width: $mobileResolution) {
-    // TODO
+    #offers-container {
+    }
 }
 
 @media only screen and (min-width: $desktopResolution) {
-    // TODO
+    #offers-container {
+    }
 }

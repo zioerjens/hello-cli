@@ -1,17 +1,19 @@
 <!-- burger icon background -->
-<div id="burger-icon-background" routerLink="/home" routerLinkActive="hidden">
+<!-- <div id="burger-icon-background" routerLink="/home" routerLinkActive="hidden">
     <img src="assets/img/logo-black.png" id="logo"/>
-</div>
+</div> -->
 
 <!-- Navigation -->
 <div [@openClose]="{value: this.getAnimationStatus(), params: {max_height: maxHeight}}" id="outer-navigation-container">
-    <div id="navigation-container" class="mat-app-background">
+    <div id="navigation-container" #navigationContainer>
         <div [ngClass]="applicationStateService.getIsMobileResolution()?'nav-mobile':'nav-desktop'" id="navigation-item-holder">
-            <a class="navigation-item" routerLink="/home" routerLinkActive="active">Vorstellung</a>
-            <a class="navigation-item" routerLink="/home" routerLinkActive="active">Schwangerschaftskontrollen</a>
-            <a class="navigation-item" routerLink="/home" routerLinkActive="active">Wochenbettbetreuung</a>
-            <a class="navigation-item" routerLink="/home" routerLinkActive="active">Spezielle Angebote</a>
+            <a class="navigation-item" routerLink="/home" routerLinkActive="navigation-active" #firstNavigationItem>{{ 'NAVIGATION.PRESENTATION' | translate }}<hr></a>
+            <a class="navigation-item" routerLink="/pregnancy-checks" routerLinkActive="navigation-active">{{ 'PREGNANCY-CHECKS' | translate }}<hr></a>
+            <a class="navigation-item" routerLink="/cildbed-care" routerLinkActive="navigation-active">{{ 'CHILDBED-CARE' | translate }}<hr></a>
+            <a class="navigation-item" routerLink="/special-offers" routerLinkActive="navigation-active">{{ 'SPECIAL-OFFERS' | translate }}<hr></a>
         </div>
+        <!-- Language Selector -->
+        <app-language-selector [ngStyle]="{'margin-top': this.desiredMarginTopDistance}" class="navigation-item" #languageSelector></app-language-selector>
     </div>
 </div>
 

@@ -1,8 +1,9 @@
 @import "src/app/constants";
 
 .app-container {
-    height: calc(100% - 40px);
+    color: $font;
     background-color: $home-accent;
-    color: $color2;
     border: solid 20px white;
+    border-right: solid 15px white;
+    min-height: calc(100% - 40px);
 }

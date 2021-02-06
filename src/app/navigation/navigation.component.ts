@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, AfterViewInit } from '@angular/core';
+import { Component, OnInit, Input, AfterViewInit, ElementRef, ViewChild, Renderer2 } from '@angular/core';
 import { ApplicationStateService } from '../application-state.service';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 
@@ -12,7 +12,7 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
       state('closed', style({
         maxHeight: '0'
       })),
-      transition('* => *', animate('1s ease-out'))
+      transition('* => *', animate('0.5s ease-out'))
     ]),
   ],
   templateUrl: './navigation.component.html',
@@ -21,9 +21,17 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
 })
 export class NavigationComponent implements OnInit, AfterViewInit {
 
+  @ViewChild('navigationContainer') navigationContainer : ElementRef;
+  @ViewChild('firstNavigationItem') firstNavigationItem : ElementRef;
+  @ViewChild('languageSelector', { read: ElementRef }) languageSelector : ElementRef;
   @Input() maxHeight: string = '200px';
   
-  constructor(public applicationStateService: ApplicationStateService) { }
+  public desiredMarginTopDistance = "0px";
+
+  constructor(
+    public applicationStateService: ApplicationStateService,
+    private renderer: Renderer2
+    ) { }
   
   isOpen = false;
   
@@ -34,8 +42,13 @@ export class NavigationComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void  {
-    var navigationHeight = document.getElementById("navigation-container").offsetHeight.toString();
-    this.maxHeight =  navigationHeight + "px";
+    setTimeout(() => {
+      var navigationHeight = this.navigationContainer.nativeElement.scrollHeight;
+      var firstNavigationItemHeight = this.firstNavigationItem.nativeElement.scrollHeight;
+      var desiredMarginTop = 0 - firstNavigationItemHeight;
+      this.desiredMarginTopDistance = desiredMarginTop.toString() + "px";
+      this.maxHeight =  navigationHeight.toString() + "px";
+      }, 0)
   }
 
   toggleNavigation() {
