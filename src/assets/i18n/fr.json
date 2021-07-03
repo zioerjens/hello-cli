@@ -9,5 +9,10 @@
 
   "NAVIGATION": {
       "PRESENTATION": "Presentation"
+  },
+
+  "CONTACT": {
+    "TITLE": "Contacter",
+    "SUBTITLE": "Hast du Fragen oder bist interessiert? Mit diesem Formular kannst du mir eine Nachricht schreiben."
   }
 }

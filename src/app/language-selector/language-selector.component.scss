@@ -5,9 +5,11 @@
 #language-selector {
     background-color: transparent;
     border: none;
+    cursor: pointer;
 }
 
 #language-selector option {
     background-color: transparent;
     border: none;
+    cursor: pointer !important;
 }

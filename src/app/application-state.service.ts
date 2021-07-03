@@ -6,7 +6,7 @@ export class ApplicationStateService {
   private isMobileResolution: boolean;
 
   constructor() {
-    if (window.innerWidth < 768) {
+    if (window.innerWidth < 800) {
       this.isMobileResolution = true;
     } else {
       this.isMobileResolution = false;

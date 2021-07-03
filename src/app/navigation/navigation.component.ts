@@ -23,10 +23,12 @@ export class NavigationComponent implements OnInit, AfterViewInit {
 
   @ViewChild('navigationContainer') navigationContainer : ElementRef;
   @ViewChild('firstNavigationItem') firstNavigationItem : ElementRef;
+  @ViewChild('burger') burger : ElementRef;
   @ViewChild('languageSelector', { read: ElementRef }) languageSelector : ElementRef;
   @Input() maxHeight: string = '200px';
   
   public desiredMarginTopDistance = "0px";
+  public firstNavigationItemHeight = 35;
 
   constructor(
     public applicationStateService: ApplicationStateService,
@@ -36,19 +38,30 @@ export class NavigationComponent implements OnInit, AfterViewInit {
   isOpen = false;
   
   ngOnInit() : void {
-    if(!this.applicationStateService.getIsMobileResolution()) {
+    if( !this.applicationStateService.getIsMobileResolution() ) {
       this.isOpen = true;
     }
   }
 
   ngAfterViewInit(): void  {
     setTimeout(() => {
+
+      // Get height of the first item in the navigation for the burger-icon size 
+      // and the language selector on the desktop version
+      this.firstNavigationItemHeight = this.firstNavigationItem.nativeElement.scrollHeight;
+
+      // Lift position of the language selector up so it's at the same height as the navigation
+      if( !this.applicationStateService.getIsMobileResolution() ) {        
+        var desiredMarginTop = 0 - this.firstNavigationItemHeight;
+        console.log(desiredMarginTop);
+        this.desiredMarginTopDistance = desiredMarginTop.toString() + "px";
+      }
+
+
+      // Optimize height for burger menu
       var navigationHeight = this.navigationContainer.nativeElement.scrollHeight;
-      var firstNavigationItemHeight = this.firstNavigationItem.nativeElement.scrollHeight;
-      var desiredMarginTop = 0 - firstNavigationItemHeight;
-      this.desiredMarginTopDistance = desiredMarginTop.toString() + "px";
       this.maxHeight =  navigationHeight.toString() + "px";
-      }, 0)
+      }, 1)
   }
 
   toggleNavigation() {

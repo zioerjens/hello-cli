@@ -22,6 +22,7 @@ import { PregnancyChecksComponent } from './pregnancy-checks/pregnancy-checks.co
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { LanguageSelectorComponent } from './language-selector/language-selector.component';
+import { ContactComponent } from './contact/contact.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(httpClient: HttpClient) {
@@ -35,7 +36,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     NavigationComponent,
     HeadComponent,
     PregnancyChecksComponent,
-    LanguageSelectorComponent
+    LanguageSelectorComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,

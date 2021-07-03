@@ -8,6 +8,15 @@
   },
 
   "NAVIGATION": {
-      "PRESENTATION": "Vorstellung"
+    "PRESENTATION": "Vorstellung"
+  },
+
+  "CONTACT": {
+    "TITLE": "Kontakt",
+    "SUBTITLE": "Hast du Fragen oder bist interessiert? Mit diesem Formular kannst du mir eine Nachricht schreiben.",
+    "EMAIL": "E-Mail Adresse",
+    "REPEAT-EMAIL": "E-Mail wiederholen",
+    "SUBJECT": "Betreff",
+    "MESSAGE": "Nachricht"
   }
 }

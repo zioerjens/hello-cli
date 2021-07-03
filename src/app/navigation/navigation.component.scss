@@ -28,6 +28,8 @@
     top: 20px;
     height: 5.5vh;
     right: 25px;
+    margin-top: 5px;
+    cursor: pointer;
 }
 
 #burger svg {
@@ -74,31 +76,28 @@
 #navigation-container {    
     background-color: $home-accent;
     min-height: 30px;
+    text-align: center;
 }
 
 #outer-navigation-container {
     overflow: hidden;
 }
 
-app-language-selector {
-    float: right !important;
-    top: 0;
-}
-
-// #first-item {
-//     margin-left: auto
-// }
-
-// #last-item {
-//     margin-right: auto;
-// }
-
 @media only screen and (max-width: $mobileResolution) {
+
     #outer-navigation-container {
         max-height: 0;
     }
 
     #burger-icon-background {
         height:13.2vw;
+    }
+}
+
+@media only screen and (min-width: $desktopResolution) {
+
+    app-language-selector {
+        float: right !important;
+        top: 0;
     }
 }
