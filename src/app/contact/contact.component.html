@@ -1,0 +1,20 @@
+<div id="contact-container">
+    <app-navigation></app-navigation>
+    <div id="contact-holder">
+        <img id="letter" src="assets/img/letter.svg"/>
+        <p></p>
+            {{ 'CONTACT.SUBTITLE' | translate }}
+        <form id="contact-form">
+            <p>{{ 'CONTACT.EMAIL' | translate }}</p>
+            <input type="email" name="email" required #email/>
+            <p>{{ 'CONTACT.REPEAT-EMAIL' | translate }}</p>
+            <input type="email" name="repeatEmail" required #repeatEmail/>
+            <p>{{ 'CONTACT.SUBJECT' | translate }}</p>
+            <input type="text" name="subject" required #subject/>
+            <p>{{ 'CONTACT.MESSAGE' | translate }}</p>
+            <textarea type="text" name="message" required #message></textarea>
+            <div><button id="submit-button" type="submit">Senden</button></div>
+        </form>
+        <p id="contact-info">tatiana.perreten@meineMail.com<br>+41 76 396 84 56</p>
+    </div>
+</div>
